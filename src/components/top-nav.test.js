@@ -8,12 +8,11 @@ describe(<TopNav />, () => {
 		shallow(<TopNav />);
 	});
 
-	it('Dispatches the onRestartGame when clicked on', () => {
+	it('Dispatches the on restartGame when clicked on', () => {
 		const dispatch = jest.fn();
 		const wrapper = mount(<TopNav dispatch={dispatch}/>);
-		// wrapper.find('restartGame').instance().value = 10;
 		wrapper.find('a.new').simulate('click');
-		expect(dispatch).toHaveBeenCalledWith(restartGame(10));
+		expect(dispatch).toHaveBeenCalled();
 	})
 
 	it('Dispatches the onGenerateAuralUpdate when clicked on', () => {
